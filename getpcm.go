@@ -241,6 +241,30 @@ func main() {
 		println("    MSGT: " + getMSGTname(int(MSGTdec)) + " (" + MSGT + ")")
 
 		if getMSGTname(int(MSGTdec)) == "IAM" {
+			//NCI
+			NCI := ISUPBin[24:32]
+			NCIdec, _ := strconv.ParseInt(NCI, 2, 16)
+			println("        NCI: " + strconv.Itoa(int(NCIdec)) + " (" + NCI + ")")
+
+			//FCI
+			FCI := ISUPBin[32:48]
+			FCIdec, _ := strconv.ParseInt(FCI, 2, 16)
+			println("        FCI: " + strconv.Itoa(int(FCIdec)) + " (" + FCI + ")")
+
+			//Calling Party's Category
+			CPC := ISUPBin[48:56]
+			CPCdec, _ := strconv.ParseInt(CPC, 2, 16)
+			println("        CPC: " + strconv.Itoa(int(CPCdec)) + " (" + CPC + ")")
+
+			//Transmission medium requirement
+			TMR := ISUPBin[56:64]
+			TMRdec, _ := strconv.ParseInt(TMR, 2, 16)
+			println("        TMR: " + strconv.Itoa(int(TMRdec)) + " (" + TMR + ")")
+
+			//
+			CalledNum := ISUPBin[104:136]
+			CalledNumdec, _ := strconv.ParseInt(CalledNum, 2, 16)
+			println("        CalledNum: " + strconv.Itoa(int(CalledNumdec)) + " (" + CalledNum + ")")
 
 		}
 
